@@ -115,3 +115,9 @@ footer {
     color: white;
     margin-top: 40px;
 }
+img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px; 
+}
