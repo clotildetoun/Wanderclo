@@ -1,0 +1,136 @@
+<!--Script 
+Peux-tu refaire cette page de récit de voyages en pouvant appuyer sur les jours et quand on rappuie sur les jours la description de la journée disparait.
+tu peux ajuster la page css aussi pour que ce soit joli
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canada 08/2025 - Version Détaillée</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="Canada.html">Canada</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<main>
+  <h1 style="text-align: center;">Voyage en août 2025 - Version détaillée</h1>
+  <p style="text-align: center;">
+    Voilà tous les détails du voyage que j'ai fait au Canada avec ma famille du 12 au 26 août
+  </p>
+
+  <!-- Liste des jours -->
+  <div class="cards">
+    <div class="card" onclick="toggleTab('j1')">Jour 1 - Mardi 12 août</div>
+    <div class="card" onclick="toggleTab('j2')">Jour 2 - Mercredi 13 août</div>
+    <div class="card" onclick="toggleTab('j3')">Jour 3 - Jeudi 14 août</div>
+    <div class="card" onclick="toggleTab('j4')">Jour 4 - Vendredi 15 août</div>
+    <div class="card" onclick="toggleTab('j5')">Jour 5 - Samedi 16 août</div>
+    <div class="card" onclick="toggleTab('j6')">Jour 6 - Dimanche 17 août</div>
+    <!-- Tu continues simplement en copiant-collant -->
+  </div>
+
+  <!-- Contenus des jours -->
+  <div id="j1" class="containerTab">
+    <h2>Jour 1 - Mardi 12 août</h2>
+    <p>Description de la journée</p>
+    <figure>
+      <img src="photoj1.jpg" alt="description de l'image">
+      <figcaption>Image de ...</figcaption>
+    </figure>
+  </div>
+
+  <div id="j2" class="containerTab">
+    <h2>Jour 2 - Mercredi 13 août</h2>
+    <p>Description de la journée</p>
+    <figure>
+      <img src="photoj2.jpg" alt="description de l'image">
+      <figcaption>Image de ...</figcaption>
+    </figure>
+  </div>
+
+  <div id="j3" class="containerTab">
+    <h2>Jour 3 - Jeudi 14 août</h2>
+    <p>Description de la journée</p>
+    <figure>
+      <img src="photoj3.jpg" alt="description de l'image">
+      <figcaption>Image de ...</figcaption>
+    </figure>
+  </div>
+
+  <div id="j4" class="containerTab">
+    <h2>Jour 4 - Vendredi 15 août</h2>
+    <p>Description de la journée</p>
+    <figure>
+      <img src="photoj4.jpg" alt="description de l'image">
+      <figcaption>Image de ...</figcaption>
+    </figure>
+  </div>
+
+  <div id="j5" class="containerTab">
+    <h2>Jour 5 - Samedi 16 août</h2>
+    <p>Description de la journée</p>
+    <figure>
+      <img src="photoj5.jpg" alt="description de l'image">
+      <figcaption>Image de ...</figcaption>
+    </figure>
+  </div>
+
+  <div id="j6" class="containerTab">
+    <h2>Jour 6 - Dimanche 17 août</h2>
+    <p>Description de la journée</p>
+    <figure>
+      <img src="photoj6.jpg" alt="description de l'image">
+      <figcaption>Image de ...</figcaption>
+    </figure>
+  </div>
+</main>
+
+
+  <footer>
+    <p>&copy; 2025 Wanderclo</p>
+  </footer>
+
+  <script>
+    function toggleTab(tabName) {
+      const tab = document.getElementById(tabName);
+      tab.classList.toggle("open");
+    }
+  </script>
+
+</body>
+
+
+</html>
+
+
+<!--<div class="row">
+                <div class="column" onclick="openTab('j1');">Jour 1 - Mardi 12 août</div>
+                <div class="column" onclick="openTab('j2');">Jour 2 - Mercredi 13 août</div>
+            </div>
+
+            <div id="j1" class="containerTab">
+                <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+                <h2>Jour 1 - Mardi 12 août</h2>
+                <p>C'est le jour du grand départ !! Réveil à 9h, préparation des dernières affaires puis direction
+                    l'aéroport !<br>
+                    Puis, à 17h, on s'envole pour Montréal !<br>
+                    On est arrivés vers 18h30 à Montréal (que 1h30 de vol :o, le retour par contre sera plus long…)
+                    En arrivant, on a passé les douanes sans souci (malgré la petite frayeur du permis d'études que je
+                    n'avais toujours pas…), récupéré nos valises et on a récupéré notre voiture (un tank elle est
+                    vraiment
+                    ENORME)<br>
+                    On est arrivés à Montréal, petit visite by night puis au lit !<br>
+                </p>
+            </div>-->
