@@ -82,6 +82,13 @@ main {
     text-align: center;
 }
 
+button {
+    width : fit-content;
+    height : fit-content;
+    padding : 30px;
+    color : white;
+    background-color: red;
+}
 /* Cards */
 /* Pour les cartes de la grille des voyages */
 /* Grille responsive pour les voyages */
@@ -250,3 +257,4 @@ table{
 .containerTab h2 {
     color: red;
 }
+
