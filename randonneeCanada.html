@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randonnées au Canada</title>
+    <link rel="stylesheet" href="style.css">
+  <style>
+  /* Afficher les photos contentisées : garder la taille native mais réduire si elles débordent
+     - max-width:100% : l'image s'adapte à la largeur disponible
+     - width:auto/height:auto : conserve les proportions
+     - cursor: zoom-in : indique qu'on peut l'ouvrir en grand
+     Les images sont aussi enveloppées d'un lien qui ouvre le fichier image en grand dans un nouvel onglet. */
+  .randonnees-list .rando-item img {
+    width: auto;
+    height: auto;
+    max-width: 100%; /* réduit l'image si elle dépasse la zone disponible */
+    display: block;
+    margin: 10px 0;
+    cursor: zoom-in;
+  }
+
+  /* Galerie pour plusieurs images : miniatures côte-à-côte */
+  .randonnees-list .rando-item .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0 12px 0;
+  }
+
+  .randonnees-list .rando-item .gallery img {
+    max-width: 48%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+  }
+  </style>
+
+</head>
+<body>
+
+<header>
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="canada.html">Canada</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="randonnees-section">
+  <h1>Mes randonnées au Canada</h1>
+
+  <div id="randonnees" class="randonnees-list">
+    <!-- Les randonnées seront insérées ici (liste séquentielle) -->
+  </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Wanderclo</p>
+</footer>
+
+<script>
+// Charge randonneesCanada.json et affiche les randonnées en liste séquentielle
+async function loadRandonnees() {
+  try {
+    const res = await fetch('randonneesCanada.json');
+    if (!res.ok) throw new Error('Erreur chargement JSON');
+    const data = await res.json();
+    const container = document.getElementById('randonnees');
+    if (!Array.isArray(data)) {
+      container.innerHTML = '<p>Format JSON invalide.</p>';
+      return;
+    }
+
+    container.innerHTML = '';
+    data.forEach(r => {
+      const item = document.createElement('article');
+      item.className = 'rando-item';
+
+      const title = document.createElement('h2');
+      // Afficher seulement le titre (sans lien)
+      title.textContent = r.titre || 'Titre';
+
+      const meta = document.createElement('div');
+      meta.className = 'rando-meta';
+      meta.textContent = `${r.date || ''} • ${r.distance_km || ''} km • ${r.difficulte || ''}`;
+
+  // Supporte plusieurs images : r.images (array) ou ancien r.image (compatibilité)
+  let mediaElem = null;
+  if (Array.isArray(r.images) && r.images.length > 0) {
+    const gallery = document.createElement('div');
+    gallery.className = 'gallery';
+    r.images.forEach(src => {
+      const thumb = document.createElement('img');
+      thumb.src = src || 'photos/default.jpg';
+      thumb.alt = r.titre || 'Randonnée';
+      thumb.onerror = () => { thumb.style.display = 'none'; };
+
+      const link = document.createElement('a');
+      link.href = src || 'photos/default.jpg';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.title = 'Ouvrir l\'image en grand';
+      link.appendChild(thumb);
+
+      gallery.appendChild(link);
+    });
+    mediaElem = gallery;
+  } else {
+    const img = document.createElement('img');
+    const src = r.image || (r.images && r.images[0]) || 'photos/default.jpg';
+    img.src = src;
+    img.alt = r.titre || 'Randonnée';
+    img.onerror = () => { img.style.display = 'none'; };
+    const imgLink = document.createElement('a');
+    imgLink.href = src;
+    imgLink.target = '_blank';
+    imgLink.rel = 'noopener noreferrer';
+    imgLink.title = 'Ouvrir l\'image en grand';
+    imgLink.appendChild(img);
+    mediaElem = imgLink;
+  }
+
+      const desc = document.createElement('p');
+      desc.className = 'rando-desc';
+      desc.textContent = r.description || '';
+
+  item.appendChild(title);
+  item.appendChild(meta);
+  if (mediaElem) item.appendChild(mediaElem);
+  item.appendChild(desc);
+
+      container.appendChild(item);
+    });
+
+  } catch (err) {
+    const container = document.getElementById('randonnees');
+    container.innerHTML = `<p>Impossible de charger les randonnées : ${err.message}</p>`;
+    console.error(err);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', loadRandonnees);
+</script>
+
+</body>
+</html>
+

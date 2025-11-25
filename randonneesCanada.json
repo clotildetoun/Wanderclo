@@ -1,0 +1,20 @@
+[
+    {
+        "id": "r1",
+        "titre": "La Baie - Sentier Eusher",
+        "date": "08 novembre 2025",
+    "images": ["photos/randonnee_baie.jpeg", "photos/randonnee_baie_croix.jpeg"],
+        "distance_km": 5,
+        "difficulte": "Facile",
+        "description": "Après une bonne poutine à la cantine Boivin on a  randonné. On était un groupe de 11, la colo de vacances carrément. On a fait un sentier (sentier Eusher) avec des points de vues sympas sur le fleuve saint laurent, pas mal de montée pour atteindre la croix puis on est redescendus tranquillement."
+    },
+    {
+        "id": "r2",
+        "titre": "Monts-Valins",
+        "date": "09 novembre 2025",
+    "images": ["photos/monts_valins.jpg"],
+        "distance_km": 16,
+        "difficulte": "Difficileeeeeeee",
+        "description": "Ce weekend on enchaine les randonnées ! \nRéveil 8h (trop tôt pour un dimanche…) pour partir aux monts Valin, à environ 40 min de Chicoutimi ! On a fait 2 parcours : le pic de la tête du chien (8km) et le pic du Grand Corbeau (12km) avec un total d'environ 800D+. Bref c'était dur mais tellement joli, en plus il a neigé donc tout était blanc. Par contre il faut mériter la vue avec toutes les montées pour y arriver ! Le retour était plus rapide (parce que c'était une descente), par contre il nous a valu quelques chutes …"
+    }
+]
