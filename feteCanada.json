@@ -2,14 +2,15 @@
     {
         "id": "f1",
         "titre": "Soirée de Noël",
-        "date": "08 novembre 2025",
+        "date": "14 novembre 2025",
     "images": ["photos/soiréeNoel1.JPEG"],
-        "description": "Noël commence tôt ici, dès le mois de novembre on commence les soirées de Noël avec des décorations de pain d'épices, des chocolats chauds et un petit film de Noël qui prend pas la tête"
+        "description": "Noël commence tôt ici, dès le mois de novembre on commence les soirées de Noël avec des décorations de pain d'épices, des chocolats chauds et un petit film de Noël qui prend pas la tête; 
+        Petite devinette, essayer de trouver mon pain d'épices ! "
     },
     {
         "id": "f2",
         "titre": "Soirée Halloween",
-        "date": "15 novembre 2025",
+        "date": "30 octobre 2025",
     "images": ["photos/feteCanada1.JPEG"],
         "description": "L'UQAC a organisé une soirée d'halloween au vieux port de Chicoutimi. Tout le monde a joué le jeu avec des déguisements incroyables (des teletubbies, des schtroumpfs, le petit chaperon rouge,...). Je m'étais déguisé en Chucky (pratique avec la salopette)"
     }
